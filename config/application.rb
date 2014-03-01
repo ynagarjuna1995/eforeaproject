@@ -8,6 +8,8 @@ Bundler.require(:default, Rails.env)
 
 module Services
   class Application < Rails::Application
+    config.assets.initialize_on_precompile =false   # to get rid off the rejection of heroku app according to heroku docsOnce added,
+                                                    # commit your change and redeploy to Heroku – your assets should compile without your app attempting to connect to the database, which should resolve the error you're witnessing.
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration should go into files in config/initializers
     # -- all .rb files in that directory are automatically loaded.
